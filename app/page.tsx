@@ -151,7 +151,7 @@ useEffect(() => {}, [])
   </div>
 </div>
         {BUBBLES.map((b, i) => (
-          <div key={b.key} className="bubble absolute flex flex-col items-center justify-center text-center cursor-default select-none rounded-full"
+          <div key={b.key} className="bubble absolute flex-col items-center justify-center text-center cursor-default select-none rounded-full hidden md:flex"
             style={{
               width: b.size, height: b.size,
               top: b.top, left: b.left, right: b.right, bottom: b.bottom,
