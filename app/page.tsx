@@ -56,7 +56,8 @@ export default function Home() {
   }, [])
   const handleSubmit = async () => {
     setLoading(true)
-    const { error } = await supabase.from('leads').insert([{ name, phone, message }])
+    const res = await fetch('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, phone, message }) })
+const { error } = await res.json()
     if (!error) setSent(true)
     setLoading(false)
   }
